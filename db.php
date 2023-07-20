@@ -1,5 +1,16 @@
 	<?php
-		$servername="localhost";
+
+		define('db_server','localhost');
+		define('db_user','root');
+		define('db_pass','');
+		define('db_name','aaes');
+
+		$con = mysqli_connect(db_server,db_user,db_pass,db_name);
+		if($con->connect_error){
+			echo "failed to connect to MYSQL";
+		}
+		
+		/*$servername="localhost";
 		$username="root";
 		$password="";
 		$dbname="aaes";	
@@ -22,5 +33,5 @@
 
 		$mysqli->close();
 
-		echo json_encode($row);
+		echo json_encode($row);*/
 ?>

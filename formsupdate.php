@@ -1,13 +1,11 @@
 <?php
-include'db.php';
+include('db.php');
 
-$request = $_REQUEST;
+    echo $id_oncall = $_POST['id_oncall'];
 
-    $id_oncall = $request['id_oncall'];
-
-    $anaethetist = $request['anaethetist'];
-    $cardiac = $request['cardiac'];
-    $cardiologist = $request['cardiologist'];
+    echo $anaethetist = $_POST['anaethethist'];
+    echo $cardiac = $_POST['cardiac'];
+    echo $cardiologist = $_POST['cardiologist'];
     $earnose = $request['earnose'];
     $gsurgeon = $request['gsurgeon'];
     $gphysician = $request['gphysician'];
@@ -21,11 +19,18 @@ $request = $_REQUEST;
     $urologist = $request['urologist'];
     $psychiatrist = $request['psychiatrist'];
 
-    $sql = "UPDATE oncall SET anaethetist='".$anaethetist."', cardiac='".$cardiac."', cardiologist='".$cardiologist."', earnose='".$earnose."', gsurgeon='".$gsurgeon."', gphysician='".$gphysician."',  nephrologist='".$nephrologist."', gastroentologist='".$gastroentologist."',  neurosurgeon='".$neurosurgeon."', obstretrician='".$obstretrician."', orthopaedic='".$orthopaedic."', paediatrician='".$paediatrician."', plasticsurgeon='".$plasticsurgeon."', urologist='".$urologist."', psychiatrist='".$psychiatrist."' WHERE id_oncall='".$id_oncall."' ";
+    $sql = "UPDATE oncall SET anaethetist='".$anaethetist."', 
+    cardiac='".$cardiac."', cardiologist='".$cardiologist."', 
+    earnose='".$earnose."', gsurgeon='".$gsurgeon."', 
+    gphysician='".$gphysician."',  nephrologist='".$nephrologist."', 
+    gastroentologist='".$gastroentologist."',  neurosurgeon='".$neurosurgeon."', 
+    obstretrician='".$obstretrician."', orthopaedic='".$orthopaedic."', paediatrician='".$paediatrician."', 
+    plasticsurgeon='".$plasticsurgeon."', urologist='".$urologist."', psychiatrist='".$psychiatrist."' 
+    WHERE id_oncall='".$id_oncall."' ";
 
     if($mysqli->query($sql)){
       echo "Consultant has been sucessfully update.";
     } else {
-      return "Error:" .$sql. "<br" .$mysqli->error;
+      return "Error:" .$sql. "<br>" .$mysqli->error;
     }
 ?>

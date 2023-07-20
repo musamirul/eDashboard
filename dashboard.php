@@ -59,7 +59,7 @@
             <div class="card-body">
               <h5 class="card-title">CONSULTANT ON-CALL</h5>
 
-              <form action="formsupdate.php">
+              <form action="formsupdate.php" method="post">
 
                 <div class="col-md-12">
                   <label for="anaethethist">Anaethethist :</label>
